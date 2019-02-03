@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="CBEntities">
+    <EntitySetMapping Name="Locations">
+      <EntityTypeMapping TypeName="Model.Location">
+        <MappingFragment StoreEntitySet="Locations">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="AREA" ColumnName="AREA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TIMINGS">
+      <EntityTypeMapping TypeName="Model.TIMING">
+        <MappingFragment StoreEntitySet="TIMINGS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TIMING1" ColumnName="TIMING" />
+          <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BOOKINGs">
+      <EntityTypeMapping TypeName="Model.BOOKING">
+        <MappingFragment StoreEntitySet="BOOKING">
+          <ScalarProperty Name="CAB_ID" ColumnName="CAB_ID" />
+          <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+          <ScalarProperty Name="TIMING" ColumnName="TIMING" />
+          <ScalarProperty Name="LOC_ID" ColumnName="LOC_ID" />
+          <ScalarProperty Name="EMP_ID" ColumnName="EMP_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DRIVERs">
+      <EntityTypeMapping TypeName="Model.DRIVER">
+        <MappingFragment StoreEntitySet="DRIVER">
+          <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+          <ScalarProperty Name="LICENSE_NUMBER" ColumnName="LICENSE_NUMBER" />
+          <ScalarProperty Name="CONTACT_NUMBER" ColumnName="CONTACT_NUMBER" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EMPLOYEEs">
+      <EntityTypeMapping TypeName="Model.EMPLOYEE">
+        <MappingFragment StoreEntitySet="EMPLOYEE">
+          <ScalarProperty Name="SHIFT_ID" ColumnName="SHIFT_ID" />
+          <ScalarProperty Name="OFFICE_LOCATION" ColumnName="OFFICE_LOCATION" />
+          <ScalarProperty Name="DESIGNATION" ColumnName="DESIGNATION" />
+          <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VEHICLE_DETAILS">
+      <EntityTypeMapping TypeName="Model.VEHICLE_DETAILS">
+        <MappingFragment StoreEntitySet="VEHICLE_DETAILS">
+          <ScalarProperty Name="OWNER_NAME" ColumnName="OWNER_NAME" />
+          <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+          <ScalarProperty Name="CAPACITY" ColumnName="CAPACITY" />
+          <ScalarProperty Name="REGISTRATION_NUMBER" ColumnName="REGISTRATION_NUMBER" />
+          <ScalarProperty Name="CAB_NUMBER" ColumnName="CAB_NUMBER" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

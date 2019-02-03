@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="CBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Locations" EntityType="Model.Location" />
+    <EntitySet Name="TIMINGS" EntityType="Model.TIMING" />
+    <EntitySet Name="BOOKINGs" EntityType="Model.BOOKING" />
+    <EntitySet Name="DRIVERs" EntityType="Model.DRIVER" />
+    <EntitySet Name="EMPLOYEEs" EntityType="Model.EMPLOYEE" />
+    <EntitySet Name="VEHICLE_DETAILS" EntityType="Model.VEHICLE_DETAILS" />
+  </EntityContainer>
+  <EntityType Name="Location">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="AREA" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TIMING">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="TIMING1" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="TYPE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="BOOKING">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="Int32" Name="EMP_ID" />
+    <Property Type="Int32" Name="LOC_ID" />
+    <Property Type="DateTime" Name="TIMING" />
+    <Property Type="String" Name="TYPE" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="CAB_ID" />
+  </EntityType>
+  <EntityType Name="DRIVER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="NAME" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CONTACT_NUMBER" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="LICENSE_NUMBER" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ADDRESS" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="EMPLOYEE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="NAME" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ADDRESS" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="DESIGNATION" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="OFFICE_LOCATION" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="SHIFT_ID" />
+  </EntityType>
+  <EntityType Name="VEHICLE_DETAILS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="CAB_NUMBER" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="REGISTRATION_NUMBER" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="CAPACITY" />
+    <Property Type="String" Name="TYPE" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="OWNER_NAME" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

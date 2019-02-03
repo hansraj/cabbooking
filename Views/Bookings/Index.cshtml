@@ -1,0 +1,35 @@
+﻿@using System.Collections
+@using System.Diagnostics
+@using cab_booking1.Models;
+@{
+    var locations = ViewData["Locations"] as List<Location>;
+}
+@{
+    ViewBag.Title = "Home Page";
+}
+
+		
+<h2>@ViewBag.Message</h2>
+@using (Html.BeginForm("Book", "Bookings"))
+{
+    <label> Select Your Drop Time:</label>
+    <select id="timing_list">
+        @foreach (var item in Model)
+        {
+            <option>@item.TIMING1</option>
+        }
+    </select>
+
+    <select id="location_list">
+    
+        @{
+            Debug.Assert(@locations != null, "@locations != null");
+        }
+        @foreach (var item in @locations)
+        {
+            <option id="@item.ID" value="@item.AREA">@item.AREA</option>
+        }
+    </select>
+	<input type="submit" />
+
+}

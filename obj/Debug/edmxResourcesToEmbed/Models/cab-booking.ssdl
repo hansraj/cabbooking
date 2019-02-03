@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="BOOKING" EntityType="Model.Store.BOOKING" store:Type="Tables" store:Schema="dbo" store:Name="BOOKING">
+      <DefiningQuery>SELECT 
+      [BOOKING].[ID] AS [ID], 
+      [BOOKING].[EMP_ID] AS [EMP_ID], 
+      [BOOKING].[LOC_ID] AS [LOC_ID], 
+      [BOOKING].[TIMING] AS [TIMING], 
+      [BOOKING].[TYPE] AS [TYPE], 
+      [BOOKING].[CAB_ID] AS [CAB_ID]
+      FROM [dbo].[BOOKING] AS [BOOKING]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="DRIVER" EntityType="Model.Store.DRIVER" store:Type="Tables" store:Schema="dbo" store:Name="DRIVER">
+      <DefiningQuery>SELECT 
+      [DRIVER].[ID] AS [ID], 
+      [DRIVER].[NAME] AS [NAME], 
+      [DRIVER].[CONTACT_NUMBER] AS [CONTACT_NUMBER], 
+      [DRIVER].[LICENSE_NUMBER] AS [LICENSE_NUMBER], 
+      [DRIVER].[ADDRESS] AS [ADDRESS]
+      FROM [dbo].[DRIVER] AS [DRIVER]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="EMPLOYEE" EntityType="Model.Store.EMPLOYEE" store:Type="Tables" store:Schema="dbo" store:Name="EMPLOYEE">
+      <DefiningQuery>SELECT 
+      [EMPLOYEE].[ID] AS [ID], 
+      [EMPLOYEE].[NAME] AS [NAME], 
+      [EMPLOYEE].[ADDRESS] AS [ADDRESS], 
+      [EMPLOYEE].[DESIGNATION] AS [DESIGNATION], 
+      [EMPLOYEE].[OFFICE_LOCATION] AS [OFFICE_LOCATION], 
+      [EMPLOYEE].[SHIFT_ID] AS [SHIFT_ID]
+      FROM [dbo].[EMPLOYEE] AS [EMPLOYEE]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Locations" EntityType="Model.Store.Locations" store:Type="Tables" store:Schema="dbo" store:Name="Locations">
+      <DefiningQuery>SELECT 
+      [Locations].[ID] AS [ID], 
+      [Locations].[AREA] AS [AREA]
+      FROM [dbo].[Locations] AS [Locations]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TIMINGS" EntityType="Model.Store.TIMINGS" store:Type="Tables" store:Schema="dbo" store:Name="TIMINGS">
+      <DefiningQuery>SELECT 
+      [TIMINGS].[ID] AS [ID], 
+      [TIMINGS].[TIMING] AS [TIMING], 
+      [TIMINGS].[TYPE] AS [TYPE]
+      FROM [dbo].[TIMINGS] AS [TIMINGS]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VEHICLE_DETAILS" EntityType="Model.Store.VEHICLE_DETAILS" store:Type="Tables" store:Schema="dbo" store:Name="VEHICLE_DETAILS">
+      <DefiningQuery>SELECT 
+      [VEHICLE_DETAILS].[ID] AS [ID], 
+      [VEHICLE_DETAILS].[CAB_NUMBER] AS [CAB_NUMBER], 
+      [VEHICLE_DETAILS].[REGISTRATION_NUMBER] AS [REGISTRATION_NUMBER], 
+      [VEHICLE_DETAILS].[CAPACITY] AS [CAPACITY], 
+      [VEHICLE_DETAILS].[TYPE] AS [TYPE], 
+      [VEHICLE_DETAILS].[OWNER_NAME] AS [OWNER_NAME]
+      FROM [dbo].[VEHICLE_DETAILS] AS [VEHICLE_DETAILS]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'C:\PROGRAM FILES (X86)\MICROSOFT SQL SERVER\MSSQL.1\MSSQL\DATA\CAB-BOOKING.MDF.dbo.BOOKING' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="BOOKING">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="EMP_ID" Type="int" />
+    <Property Name="LOC_ID" Type="int" />
+    <Property Name="TIMING" Type="datetime" />
+    <Property Name="TYPE" Type="varchar" MaxLength="50" />
+    <Property Name="CAB_ID" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'C:\PROGRAM FILES (X86)\MICROSOFT SQL SERVER\MSSQL.1\MSSQL\DATA\CAB-BOOKING.MDF.dbo.DRIVER' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="DRIVER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="NAME" Type="varchar" MaxLength="50" />
+    <Property Name="CONTACT_NUMBER" Type="varchar" MaxLength="50" />
+    <Property Name="LICENSE_NUMBER" Type="varchar" MaxLength="50" />
+    <Property Name="ADDRESS" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'C:\PROGRAM FILES (X86)\MICROSOFT SQL SERVER\MSSQL.1\MSSQL\DATA\CAB-BOOKING.MDF.dbo.EMPLOYEE' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="EMPLOYEE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="NAME" Type="varchar" MaxLength="50" />
+    <Property Name="ADDRESS" Type="varchar" MaxLength="50" />
+    <Property Name="DESIGNATION" Type="varchar" MaxLength="50" />
+    <Property Name="OFFICE_LOCATION" Type="varchar" MaxLength="50" />
+    <Property Name="SHIFT_ID" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'C:\PROGRAM FILES (X86)\MICROSOFT SQL SERVER\MSSQL.1\MSSQL\DATA\CAB-BOOKING.MDF.dbo.Locations' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="Locations">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="AREA" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'C:\PROGRAM FILES (X86)\MICROSOFT SQL SERVER\MSSQL.1\MSSQL\DATA\CAB-BOOKING.MDF.dbo.TIMINGS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="TIMINGS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="TIMING" Type="varchar" MaxLength="50" />
+    <Property Name="TYPE" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'C:\PROGRAM FILES (X86)\MICROSOFT SQL SERVER\MSSQL.1\MSSQL\DATA\CAB-BOOKING.MDF.dbo.VEHICLE_DETAILS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="VEHICLE_DETAILS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="CAB_NUMBER" Type="varchar" MaxLength="50" />
+    <Property Name="REGISTRATION_NUMBER" Type="varchar" MaxLength="50" />
+    <Property Name="CAPACITY" Type="int" />
+    <Property Name="TYPE" Type="varchar" MaxLength="50" />
+    <Property Name="OWNER_NAME" Type="varchar" MaxLength="50" />
+  </EntityType>
+</Schema>
